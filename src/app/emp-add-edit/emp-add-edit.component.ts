@@ -32,6 +32,12 @@ export class EmpAddEditComponent {
       caseDescription:''
     })
   }
+
+  onFormSubmit(){
+    if(this.empForm.valid){
+      console.log(this.empForm.value);
+    }
+  }
  
   }
   
