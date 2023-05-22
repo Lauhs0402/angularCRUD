@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { CustomersService } from '../services/customers.service';
+import { DialogRef } from '@angular/cdk/dialog';
 
 
 @Component({
@@ -17,7 +19,10 @@ export class EmpAddEditComponent {
     "duck"
   ];
 
-  constructor(private _fb: FormBuilder) {
+  constructor(
+    private _fb: FormBuilder, 
+    private _empService: CustomersService,
+    private _dialogRef: DialogRef<EmpAddEditComponent>) {
     this.empForm = this._fb.group({
       firstName: '',
       lastName: '',
@@ -35,7 +40,13 @@ export class EmpAddEditComponent {
 
   onFormSubmit(){
     if(this.empForm.valid){
-      console.log(this.empForm.value);
+      this._empService.addCustomer(this.empForm.value).subscribe({
+        next: (val: any) => {
+          alert('customer added successfully');
+          this._dialogRef.close();
+        },
+        error (err:any) { { console.error(err) }
+      } });
     }
   }
  

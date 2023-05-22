@@ -16,8 +16,20 @@
   "profile": {
     "name": "typicode"
   },
-
-  "customer":[
-    
+  "customer": [
+    {
+      "firstName": "laura ",
+      "lastName": "hoyos",
+      "email": "laura.hoyos.suarez@gmail.com",
+      "phone": 3134291041,
+      "birth": "2023-05-11T05:00:00.000Z",
+      "gender": "male",
+      "petName": "toto",
+      "age": 2,
+      "petType": "cat",
+      "breed": "",
+      "caseDescription": "",
+      "id": 1
+    }
   ]
 }
