@@ -52,12 +52,19 @@
         <div class="row">
             <mat-form-field appearance="outline">
                 <mat-label>Pet type</mat-label>
-                <mat-select>
+                <mat-select formControlName="petType">
                     <mat-option *ngFor="let val of petType" [value]="val">
                         {{val}}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
         </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>case description</mat-label>
+                <textarea name="" id="" cols="30" rows="10" matInput></textarea>
+            </mat-form-field>
+        </div>
+        
     </div>
 </form>
