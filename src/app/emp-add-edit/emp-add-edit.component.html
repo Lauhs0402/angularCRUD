@@ -1,7 +1,7 @@
 <div mat-dialog-title>
     Customer registracion
 </div>
-<form [formGroup]="empForm">
+<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
     <div mat-dialog-content class="content">
         <div class="row">
             <mat-form-field appearance="outline">
