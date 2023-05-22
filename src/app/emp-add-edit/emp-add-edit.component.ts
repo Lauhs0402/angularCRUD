@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -8,14 +8,30 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./emp-add-edit.component.scss']
 })
 export class EmpAddEditComponent {
+  empForm: FormGroup;
 
   petType : string[] = [
     "dog",
     "cat",
     "rabbit",
     "duck"
-  ]
+  ];
 
+  constructor(private _fb: FormBuilder) {
+    this.empForm = this._fb.group({
+      firstName: '',
+      lastName: '',
+      email:'',
+      phone:'',
+      birth:'',
+      gender:'',
+      petName:'',
+      age:'',
+      petType:'',
+      breed:'',
+      caseDescription:''
+    })
+  }
  
   }
   

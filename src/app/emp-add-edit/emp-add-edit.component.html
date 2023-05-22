@@ -1,72 +1,63 @@
-<div mat-dialog-title>Customer registración</div>
-<div mat-dialog-content class="content">
-    <div class="row">
-        <mat-form-field appearance="outline">
-            <mat-label>First name</mat-label>
-            <input matInput placeholder="Ex. Amelia">
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-            <mat-label>Last name</mat-label>
-            <input matInput placeholder="Ex. James">
-        </mat-form-field>
-    </div>
-    <div class="row">
-        <mat-form-field appearance="outline">
-            <mat-label>Email</mat-label>
-            <input matInput placeholder="Ex. Amelia">
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-            <mat-label>Phone</mat-label>
-            <input matInput placeholder="Ex. 123456789" type="number">
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-            <mat-label>Date of birth</mat-label>
-            <input matInput [matDatepicker]="picker" type="number">
-            <mat-hint>MM/DD/YYYY</mat-hint>
-            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
-    </div>
-    <div class="row">
-        <mat-radio-group aria-label="Select an option">
-            <mat-label><b>Gender</b></mat-label>
-            <mat-radio-button value="female">Female</mat-radio-button>
-            <mat-radio-button value="male">Male</mat-radio-button>
-            <mat-radio-button value="other">Others</mat-radio-button>
-          </mat-radio-group> 
-    </div>
-    <div class="row">
-        <mat-form-field appearance="outline">
-            <mat-label>Pet name</mat-label>
-            <input matInput placeholder="Ex. Toto">
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-            <mat-label>Age</mat-label>
-            <input matInput placeholder="Ex. 2" type="number">
-        </mat-form-field>
-        
-    </div>
-    <div class="row">
-        <mat-form-field appearance="outline">
-            <mat-label>Pet type</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let val of petType" [value]="val">{{val}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-          <mat-form-field appearance="outline">
-            <mat-label>Breed</mat-label>
-            <input type="text" matInput placeholder="Ex. Chihuahua">
-          </mat-form-field>
-    </div>
-    <div class="row">
-        <mat-form-field appearance="outline">
-            <mat-label>Case description</mat-label>
-            <textarea matInput name="" id="" cols="30" rows="10"></textarea>
-        </mat-form-field>
-    </div>
+<div mat-dialog-title>
+    Customer registracion
 </div>
-<div mat-dialog-actions class="action">
-    <button mat-raised-button color="primary" >Save</button>
-    <button mat-raised-button>Cancel</button>
-</div>
+<form [formGroup]="empForm">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>First name</mat-label>
+                <input matInput placeholder="Ex. Amelia" formControlName="firstName">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Last name</mat-label>
+                <input matInput placeholder="Ex. James" formControlName="lastName">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Ex. Amelia" formControlName="email">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Phone</mat-label>
+                <input matInput placeholder="Ex. 123456789" type="number" formControlName="phone">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Date of birth</mat-label>
+                <input matInput [matDatepicker]="picker" type="number" formControlName="birth">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-radio-group aria-label="select an opcion" formControlName="gender">
+                <mat-label><b>gender</b></mat-label>
+                <mat-radio-button value="male">Male</mat-radio-button>
+                <mat-radio-button value="female">Female</mat-radio-button>
+                <mat-radio-button value="others">Others</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div><h3>Pet registry</h3></div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Pet name</mat-label>
+                <input matInput placeholder="Ex. Toto" formControlName="petName">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Age</mat-label>
+                <input matInput placeholder="Ex. 2" formControlName="age" type="number">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Pet type</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let val of petType" [value]="val">
+                        {{val}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+</form>
