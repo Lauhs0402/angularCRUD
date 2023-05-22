@@ -16,8 +16,12 @@
             <input matInput placeholder="Ex. Amelia">
         </mat-form-field>
         <mat-form-field appearance="outline">
-            <mat-label>Choose a date</mat-label>
-            <input matInput [matDatepicker]="picker">
+            <mat-label>Phone</mat-label>
+            <input matInput placeholder="Ex. 123456789" type="number">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Date of birth</mat-label>
+            <input matInput [matDatepicker]="picker" type="number">
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
@@ -38,7 +42,7 @@
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Age</mat-label>
-            <input matInput placeholder="">
+            <input matInput placeholder="Ex. 2" type="number">
         </mat-form-field>
         
     </div>
@@ -46,20 +50,23 @@
         <mat-form-field appearance="outline">
             <mat-label>Pet type</mat-label>
             <mat-select>
-              <mat-option >
+              <mat-option *ngFor="let val of petType" [value]="val">{{val}}
               </mat-option>
             </mat-select>
           </mat-form-field>
           <mat-form-field appearance="outline">
             <mat-label>Breed</mat-label>
-            <mat-select>
-              <mat-option >
-              </mat-option>
-            </mat-select>
+            <input type="text" matInput placeholder="Ex. Chihuahua">
           </mat-form-field>
     </div>
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Case description</mat-label>
+            <textarea matInput name="" id="" cols="30" rows="10"></textarea>
+        </mat-form-field>
+    </div>
 </div>
-<div mat-dialog-actions>
-    <button mat-raised-button color="primary">Save</button>
+<div mat-dialog-actions class="action">
+    <button mat-raised-button color="primary" >Save</button>
     <button mat-raised-button>Cancel</button>
 </div>

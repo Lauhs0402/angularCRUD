@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+
 
 @Component({
   selector: 'app-emp-add-edit',
@@ -7,4 +9,14 @@ import { Component } from '@angular/core';
 })
 export class EmpAddEditComponent {
 
-}
+  petType : string[] = [
+    "dog",
+    "cat",
+    "rabbit",
+    "duck"
+  ]
+
+ 
+  }
+  
+

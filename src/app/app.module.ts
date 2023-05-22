@@ -16,6 +16,10 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
+
 
 
 
@@ -37,7 +41,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatDatepickerModule,
     MatNativeDateModule,
     MatRadioModule,
-    MatSelectModule
+    MatSelectModule,
+    FormBuilder, FormsModule, ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
