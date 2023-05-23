@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { CustomersService } from '../services/customers.service';
 import { MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { MatDialogRef } from '@angular/material/dialog';
   templateUrl: './emp-add-edit.component.html',
   styleUrls: ['./emp-add-edit.component.scss']
 })
-export class EmpAddEditComponent {
+export class EmpAddEditComponent implements OnInit{
   empForm: FormGroup;
 
   petType : string[] = [
@@ -22,7 +23,10 @@ export class EmpAddEditComponent {
   constructor(
     private _fb: FormBuilder, 
     private _empService: CustomersService,
-    private _dialogRef: MatDialogRef<EmpAddEditComponent>) {
+    private _dialogRef: MatDialogRef<EmpAddEditComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) 
+    
+    {
     this.empForm = this._fb.group({
       firstName: '',
       lastName: '',
@@ -38,15 +42,35 @@ export class EmpAddEditComponent {
     })
   }
 
+  ngOnInit(): void{
+    this.empForm.patchValue(this.data);
+  }
+
   onFormSubmit(){
     if(this.empForm.valid){
-      this._empService.addCustomer(this.empForm.value).subscribe({
-        next: (val: any) => {
-          alert('customer added successfully');
-          this._dialogRef.close(true);
-        },
-        error : (err:any) => { console.error(err) }
-      } );
+      if(this.data){
+        this._empService
+        .updateCustomer(this.data.id, this.empForm.value)
+        .subscribe({
+          next: (val: any) => {
+            alert('customer detail updated');
+            this._dialogRef.close(true);
+          },
+          error : (err:any) => { console.error(err) }
+        } );
+
+      } else {
+
+        this._empService.addCustomer(this.empForm.value).subscribe({
+          next: (val: any) => {
+            alert('customer added successfully');
+            this._dialogRef.close(true);
+          },
+          error : (err:any) => { console.error(err) }
+        } );
+
+      }
+      
     }
   }
  

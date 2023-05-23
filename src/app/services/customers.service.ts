@@ -13,6 +13,10 @@ export class CustomersService {
   addCustomer(data: any): Observable<any> {
     return this._http.post('http://localhost:3000/customer', data);
   }
+
+  updateCustomer(id: number, data: any): Observable<any> {
+    return this._http.put(`http://localhost:3000/customer/${id}`, data);
+  }
   getCustomerList(): Observable<any> {
     return this._http.get('http://localhost:3000/customer');
   }
