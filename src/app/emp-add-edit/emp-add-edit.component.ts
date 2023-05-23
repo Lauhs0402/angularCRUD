@@ -45,8 +45,8 @@ export class EmpAddEditComponent {
           alert('customer added successfully');
           this._dialogRef.close();
         },
-        error (err:any) { { console.error(err) }
-      } });
+        error : (err:any) => { console.error(err) }
+      } );
     }
   }
  

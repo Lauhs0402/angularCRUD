@@ -44,6 +44,20 @@
       "breed": "",
       "caseDescription": "",
       "id": 2
+    },
+    {
+      "firstName": "hoyos lauq",
+      "lastName": "sjewofwo",
+      "email": "laura.hoyos.suarez@gmail.com",
+      "phone": 3123458967,
+      "birth": "2023-05-18T05:00:00.000Z",
+      "gender": "male",
+      "petName": "ssdsds",
+      "age": 5,
+      "petType": "cat",
+      "breed": "",
+      "caseDescription": "",
+      "id": 3
     }
   ]
 }
