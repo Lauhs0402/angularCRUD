@@ -29,6 +29,7 @@ displayedColumns: string[] = [
   "petType",
   "breed",
   "caseDescription",
+  "action"
   ];
   dataSource!: MatTableDataSource<any>;
 
