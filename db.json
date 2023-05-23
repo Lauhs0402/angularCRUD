@@ -18,18 +18,18 @@
   },
   "customer": [
     {
-      "firstName": "chimuela",
-      "lastName": "pelayo",
+      "firstName": "laura",
+      "lastName": "hoyos",
       "email": "laura@gmail.com",
-      "phone": 3125647585,
-      "birth": "2023-05-08T05:00:00.000Z",
-      "gender": "female",
-      "petName": "chimu",
-      "age": 2,
-      "petType": "cat",
+      "phone": 312458796,
+      "birth": "2017-02-08T05:00:00.000Z",
+      "gender": "",
+      "petName": "",
+      "age": "",
+      "petType": "",
       "breed": "",
       "caseDescription": "",
-      "id": 3
+      "id": 1
     }
   ]
 }
