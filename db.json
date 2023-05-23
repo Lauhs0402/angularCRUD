@@ -30,6 +30,20 @@
       "breed": "",
       "caseDescription": "",
       "id": 1
+    },
+    {
+      "firstName": "valentina",
+      "lastName": "cerquera",
+      "email": "hola@gmail.com",
+      "phone": 3134291041,
+      "birth": "2004-07-12T05:00:00.000Z",
+      "gender": "female",
+      "petName": "blanca",
+      "age": 5,
+      "petType": "cat",
+      "breed": "",
+      "caseDescription": "",
+      "id": 2
     }
   ]
 }
