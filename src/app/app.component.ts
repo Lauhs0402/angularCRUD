@@ -46,7 +46,14 @@ displayedColumns: string[] = [
   }
   
   openAddEditEmpForm(){
-      this._dialog.open(EmpAddEditComponent)
+      const dialogRef = this._dialog.open(EmpAddEditComponent);
+      dialogRef.afterClosed().subscribe({
+        next: (val) => {
+          if (val) {
+            this.getCustomerList();
+          }
+        }
+      })
     }
       
     getCustomerList() {
@@ -65,5 +72,15 @@ displayedColumns: string[] = [
       if (this.dataSource.paginator) {
         this.dataSource.paginator.firstPage();
       }
+    }
+
+    deleteCustomer(id: number){
+      this._empService.deleteCustomer(id).subscribe({
+        next: (res) => {
+          alert("customer delete");
+          this.getCustomerList();
+        },
+        error: console.log,
+      })
     }
 }
