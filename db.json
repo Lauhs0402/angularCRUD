@@ -18,18 +18,32 @@
   },
   "customer": [
     {
-      "firstName": "amelia",
-      "lastName": "makalister",
-      "email": "laura@gmail.com",
-      "phone": 312458796,
-      "birth": "2017-02-08T05:00:00.000Z",
-      "gender": "others",
-      "petName": "chimuela",
+      "firstName": "laura",
+      "lastName": "hoyos",
+      "email": "laura.hoyos.suarez@gmail.com",
+      "phone": 3134291041,
+      "birth": "2023-05-09T05:00:00.000Z",
+      "gender": "female",
+      "petName": "catie",
       "age": 2,
-      "petType": "",
+      "petType": "cat",
       "breed": "",
       "caseDescription": "",
       "id": 1
+    },
+    {
+      "firstName": "SAM",
+      "lastName": "samantha",
+      "email": "laura.hoyos.suarezqgmail.com",
+      "phone": 3153256985,
+      "birth": "2023-05-16T05:00:00.000Z",
+      "gender": "female",
+      "petName": "cat ",
+      "age": 2,
+      "petType": "cat",
+      "breed": "",
+      "caseDescription": "",
+      "id": 2
     }
   ]
 }

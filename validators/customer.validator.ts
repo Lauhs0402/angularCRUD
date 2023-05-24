@@ -6,12 +6,12 @@ export class UserValidator extends Validator {
     constructor() {
       super();
   
-      this['ruleFor']('name')
+      this['ruleFor']('firstName')
         .notEmpty().withMessage('El nombre es obligatorio.');
   
-        this['ruleFor']('email')
-        .notEmpty().withMessage('El correo electrónico es obligatorio.')
-        .email().withMessage('El formato del correo electrónico no es válido.');
+      this['ruleFor']('email')
+      .notEmpty().withMessage('El correo electrónico es obligatorio.')
+      .email().withMessage('El formato del correo electrónico no es válido.');
   
       // Agrega más reglas de validación según tus requisitos
     }

@@ -8,6 +8,8 @@ import {MatTableDataSource} from '@angular/material/table';
 import { Observable } from 'rxjs';
 import { CoreService } from './core/core.service';
 import { UserValidator } from 'validators/customer.validator';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-root',
@@ -16,7 +18,6 @@ import { UserValidator } from 'validators/customer.validator';
 })
 
 export class AppComponent implements OnInit {
-
 
 displayedColumns: string[] = [
   "id",
@@ -38,14 +39,17 @@ displayedColumns: string[] = [
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
+  registrationForm!: FormGroup;
 
   constructor(
     private _dialog: MatDialog,
     private _empService: CustomersService,
-    private _coreService: CoreService){}
+    private _coreService: CoreService,
+    private _formBuilder: FormBuilder){}
   
   ngOnInit(): void {
     this.getCustomerList();
+    
   }
   
   openAddEditEmpForm(){
@@ -101,4 +105,8 @@ displayedColumns: string[] = [
       })
 
     }
+    
+
+    
+    
 }
