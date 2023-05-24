@@ -6,6 +6,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { Observable } from 'rxjs';
+import { CoreService } from './core/core.service';
 
 @Component({
   selector: 'app-root',
@@ -39,7 +40,8 @@ displayedColumns: string[] = [
 
   constructor(
     private _dialog: MatDialog,
-    private _empService: CustomersService){}
+    private _empService: CustomersService,
+    private _coreService: CoreService){}
   
   ngOnInit(): void {
     this.getCustomerList();
@@ -77,7 +79,7 @@ displayedColumns: string[] = [
     deleteCustomer(id: number){
       this._empService.deleteCustomer(id).subscribe({
         next: (res) => {
-          alert("customer delete");
+          this._coreService.openSnackBar("customer delete","done")
           this.getCustomerList();
         },
         error: console.log,
