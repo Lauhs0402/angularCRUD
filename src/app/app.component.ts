@@ -7,7 +7,7 @@ import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { Observable } from 'rxjs';
 import { CoreService } from './core/core.service';
-import { UserValidator } from 'validators/customer.validator';
+import { UserValidator } from 'src/app/validators/customer.validator';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
@@ -44,8 +44,7 @@ displayedColumns: string[] = [
   constructor(
     private _dialog: MatDialog,
     private _empService: CustomersService,
-    private _coreService: CoreService,
-    private _formBuilder: FormBuilder){}
+    private _coreService: CoreService){}
   
   ngOnInit(): void {
     this.getCustomerList();

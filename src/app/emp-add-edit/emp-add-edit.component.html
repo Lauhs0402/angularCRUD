@@ -7,6 +7,8 @@
             <mat-form-field appearance="outline">
                 <mat-label>First name</mat-label>
                 <input matInput placeholder="Ex. Amelia" formControlName="firstName">
+                <mat-error *ngIf="empForm?.get('firstName')?.hasError('required')">First Name is required</mat-error>
+
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Last name</mat-label>

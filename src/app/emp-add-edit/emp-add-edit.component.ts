@@ -4,8 +4,7 @@ import { CustomersService } from '../services/customers.service';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CoreService } from '../core/core.service';
-import { UserValidator } from 'validators/customer.validator';
-
+import { UserValidator } from '../validators/customer.validator';
 
 @Component({
   selector: 'app-emp-add-edit',
@@ -14,6 +13,7 @@ import { UserValidator } from 'validators/customer.validator';
 })
 export class EmpAddEditComponent implements OnInit{
   empForm: FormGroup;
+  
 
   petType : string[] = [
     "dog",
