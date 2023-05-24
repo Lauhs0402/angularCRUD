@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { CustomersService } from '../services/customers.service';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { CoreService } from '../core/core.service';
 
 
 @Component({
@@ -24,7 +25,8 @@ export class EmpAddEditComponent implements OnInit{
     private _fb: FormBuilder, 
     private _empService: CustomersService,
     private _dialogRef: MatDialogRef<EmpAddEditComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) 
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private _coreService: CoreService) 
     
     {
     this.empForm = this._fb.group({
@@ -53,7 +55,7 @@ export class EmpAddEditComponent implements OnInit{
         .updateCustomer(this.data.id, this.empForm.value)
         .subscribe({
           next: (val: any) => {
-            alert('customer detail updated');
+            this._coreService.openSnackBar('customer detail updated');
             this._dialogRef.close(true);
           },
           error : (err:any) => { console.error(err) }
@@ -63,7 +65,7 @@ export class EmpAddEditComponent implements OnInit{
 
         this._empService.addCustomer(this.empForm.value).subscribe({
           next: (val: any) => {
-            alert('customer added successfully');
+            this._coreService.openSnackBar('customer added successfully');
             this._dialogRef.close(true);
           },
           error : (err:any) => { console.error(err) }
