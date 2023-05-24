@@ -7,7 +7,7 @@ import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { Observable } from 'rxjs';
 import { CoreService } from './core/core.service';
-
+import { UserValidator } from 'validators/customer.validator';
 
 @Component({
   selector: 'app-root',
