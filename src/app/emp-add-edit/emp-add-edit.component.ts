@@ -34,7 +34,7 @@ export class EmpAddEditComponent implements OnInit{
       firstName: ['',Validators.required],
       lastName: ['',Validators.required],
       email:['',[Validators.required, Validators.email]],
-      phone:'',
+      phone:['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
       birth:'',
       gender:'',
       petName:'',
