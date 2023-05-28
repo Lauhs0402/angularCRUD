@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { CustomersService } from '../services/customers.service';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -35,15 +35,19 @@ export class EmpAddEditComponent implements OnInit{
       lastName: ['',Validators.required],
       email:['',[Validators.required, Validators.email]],
       phone:['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
-      birth:'',
+      birth:['',Validators.required],
       gender:'',
-      petName:'',
-      age:'',
+      petName:['',Validators.required],
+      age:['',Validators.required],
       petType:'',
       breed:'',
       caseDescription:''
     })
   }
+
+
+
+  
 
   ngOnInit(): void{
     this.empForm.patchValue(this.data);
@@ -76,6 +80,11 @@ export class EmpAddEditComponent implements OnInit{
       
     }
   }
+
+  
+
+
+
  
   }
   
