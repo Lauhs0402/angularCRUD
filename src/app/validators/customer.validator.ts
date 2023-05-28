@@ -3,7 +3,7 @@ import { Validator, ValidationRule } from 'fluent-validation';
 
 export class UserValidator extends Validator {
   errorMessages = {
-    required: 'First Name is required',
+    required: 'First Names is required',
     email: 'Invalid email format'
   };
 
@@ -11,6 +11,9 @@ export class UserValidator extends Validator {
     super();
 
     this['ruleFor']('firstName')
+      .notEmpty().withMessage(this.errorMessages.required);
+
+      this['ruleFor']('lastName')
       .notEmpty().withMessage(this.errorMessages.required);
 
     this['ruleFor']('email')

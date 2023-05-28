@@ -32,8 +32,8 @@ export class EmpAddEditComponent implements OnInit{
     {
     this.empForm = this._fb.group({
       firstName: ['',Validators.required],
-      lastName: '',
-      email:'',
+      lastName: ['',Validators.required],
+      email:['',[Validators.required, Validators.email]],
       phone:'',
       birth:'',
       gender:'',
