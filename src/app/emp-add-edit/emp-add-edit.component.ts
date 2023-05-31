@@ -41,7 +41,7 @@ export class EmpAddEditComponent implements OnInit{
       age:['',Validators.required],
       petType:'',
       breed:['',Validators.required],
-      caseDescription:''
+      caseDescription:['',Validators.required]
     })
   }
 

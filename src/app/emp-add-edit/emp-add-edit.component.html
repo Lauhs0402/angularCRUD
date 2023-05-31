@@ -77,6 +77,7 @@
             <mat-form-field appearance="outline">
                 <mat-label>case description</mat-label>
                 <textarea name="" id="" cols="30" rows="10" matInput formControlName="caseDescription"></textarea>
+                <mat-error *ngIf="empForm?.get('caseDescription')?.hasError('required')">case description is required</mat-error>
             </mat-form-field>
         </div>
     </div>
