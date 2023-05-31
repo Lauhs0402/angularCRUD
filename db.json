@@ -16,5 +16,62 @@
   "profile": {
     "name": "typicode"
   },
-  "customer": []
+  "customer": [
+    {
+      "firstName": "czxcxz",
+      "lastName": "cvsdv",
+      "email": "ssd@gmail.com",
+      "phone": 3134291042,
+      "birth": "1997-02-25T00:00:00.000Z",
+      "gender": "female",
+      "petName": "sdsscs",
+      "age": 3,
+      "petType": "rabbit",
+      "breed": "",
+      "caseDescription": "",
+      "id": 1
+    },
+    {
+      "firstName": "laura",
+      "lastName": "hoyos",
+      "email": "laura.hoyos.suarez@gmail.com",
+      "phone": 3134291041,
+      "birth": "1997-02-12T00:00:00.000Z",
+      "gender": "female",
+      "petName": "cat",
+      "age": 2,
+      "petType": "cat",
+      "breed": "siames",
+      "caseDescription": "",
+      "id": 2
+    },
+    {
+      "firstName": "alejandra",
+      "lastName": "hoyossss",
+      "email": "laura@gmail.com",
+      "phone": 3209724390,
+      "birth": "1997-02-02T00:00:00.000Z",
+      "gender": "male",
+      "petName": "catito",
+      "age": 3,
+      "petType": "cat",
+      "breed": "siamesita",
+      "caseDescription": "",
+      "id": 3
+    },
+    {
+      "firstName": "kjcnsdjkvnsdvnvj",
+      "lastName": "kcndskclldn",
+      "email": "ksndlksnffkldfndjc@gmail.com",
+      "phone": 3209756485,
+      "birth": "2004-01-05T00:00:00.000Z",
+      "gender": "others",
+      "petName": "kmdclskc",
+      "age": 5,
+      "petType": "cat",
+      "breed": "ramses",
+      "caseDescription": "skmdlksmdlsmdsdk",
+      "id": 4
+    }
+  ]
 }

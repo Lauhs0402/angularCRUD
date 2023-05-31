@@ -66,11 +66,17 @@
                     </mat-option>
                 </mat-select>
             </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Breed</mat-label>
+                <input matInput placeholder="Ex. siames" type="text" formControlName="breed">
+                <mat-error *ngIf="empForm?.get('breed')?.hasError('required')">Phone number is required</mat-error>
+                <mat-error *ngIf="empForm?.get('breed')?.hasError('pattern')">maximum 10 numbers</mat-error>
+            </mat-form-field>
         </div>
         <div class="row">
             <mat-form-field appearance="outline">
                 <mat-label>case description</mat-label>
-                <textarea name="" id="" cols="30" rows="10" matInput></textarea>
+                <textarea name="" id="" cols="30" rows="10" matInput formControlName="caseDescription"></textarea>
             </mat-form-field>
         </div>
     </div>
